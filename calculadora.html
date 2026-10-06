@@ -16,6 +16,9 @@
     <button onclick="restar()">Restar</button>
     <button onclick="multiplicar()">Multiplicar</button>
     <button onclick="dividir()">Dividir</button>
+    <button onclick="potencia()">Potencia</button>
+    <button onclick="porcentaje()">Porcentaje</button>
+    <button onclick="raiz()">Raíz cuadrada</button>
 
     <h2 id="resultado">Resultado: </h2>
 
@@ -55,6 +58,32 @@
                     "No se puede dividir por cero";
             }
         }
+function potencia() {
+    let numeros = obtenerNumeros();
+    let resultado = Math.pow(numeros[0], numeros[1]);
+    document.getElementById("resultado").innerText =
+        "Resultado: " + resultado;
+}
+
+function porcentaje() {
+    let numeros = obtenerNumeros();
+    let resultado = (numeros[0] * numeros[1]) / 100;
+    document.getElementById("resultado").innerText =
+        "Resultado: " + resultado;
+}
+
+function raiz() {
+    let numeros = obtenerNumeros();
+
+    if (numeros[0] >= 0) {
+        let resultado = Math.sqrt(numeros[0]);
+        document.getElementById("resultado").innerText =
+            "Resultado: " + resultado;
+    } else {
+        document.getElementById("resultado").innerText =
+            "No se puede calcular la raíz de un número negativo";
+    }
+}
     </script>
 </body>
 </html>
